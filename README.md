@@ -6,14 +6,14 @@ Questo bundle permette di integrare facilmente la libreria `italia/spid-php-lib`
 
 Vengono messe a disposizione delle rotte e dei servizi che possono essere facilmente sovrascritti
 
-Una necessità tipica che non viene implementata da questo bundle è la necessità di salvare i dati dell'utente che arrivano tramite SPID. 
+Una necessità tipica che non viene implementata da questo bundle è la necessità di salvare i dati dell'utente che arrivano tramite SPID.
 
 # Installazione
 ## Step 1: Installazione e configurazione
 Installare il repository tramite composer
 
 ```bash
-composer require italia/spid-simfony-bundle
+composer require italia/spid-symfony-bundle
 ```
 
 Abilitare il bundle aggiungendolo all' `AppKernel`
@@ -69,7 +69,7 @@ spid_symfony:
   sp_entityid: 'http://some.site.it'
   sp_key_file: '%kernel.root_dir%/../example/sp.key'
   sp_cert_file: '%kernel.root_dir%/../example/sp.crt'
-  sp_singlelogoutservice: 
+  sp_singlelogoutservice:
     - [ 'http://some.site.it/slo', '' ]
   sp_org_name: 'dev-system'
   sp_attributeconsumingservice:
@@ -81,7 +81,7 @@ spid_symfony:
   idp_metadata_folder: '%kernel.root_dir%/../example/idp_metadata'
 ```
 
-## Step 2: (opzionale) salvataggio dell'utente 
+## Step 2: (opzionale) salvataggio dell'utente
 Se necessario è possibile salvare l'utente recuperato tramite PISD. Il punto più logico dove farlo è dentro l'Authenticator fornito, facendo override del metodo `getUser` e sfruttando i dati contenuti in `$credentials` per istanziare un nuovo utente da persistere
 
 
