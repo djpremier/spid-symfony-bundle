@@ -16,19 +16,18 @@ use Symfony\Component\Security\Guard\AbstractGuardAuthenticator;
  */
 class SpidAuthenticatorTest extends TestCase
 {
-
     private $mockRouter;
 
     public function setUp()
-{
+    {
         $this->mockRouter = $this->getMockBuilder('\Symfony\Bundle\FrameworkBundle\Routing\Router')
         ->disableOriginalConstructor()
         ->getMock();
         $this->mockRouter->expects($this->any())->method('generate')->willReturn('/');
 
 
-  echo 'setUp';
-}
+        echo 'setUp';
+    }
 
     /**
      * @test
